@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Baby Shower</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #FFF5E1 0%, #FFE8D1 50%, #FFD9C0 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #5a4a3a;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header h1 {
+      font-size: 42px;
+      color: #d97d6d;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .header p {
+      font-size: 16px;
+      color: #a88070;
+      font-weight: 300;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 12px 24px;
+      border: none;
+      background: white;
+      color: #a88070;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(217, 125, 109, 0.1);
+    }
+    .tab-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(217, 125, 109, 0.2);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #d97d6d 0%, #e8997f 100%);
+      color: white;
+      box-shadow: 0 4px 16px rgba(217, 125, 109, 0.3);
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .search-bar {
+      margin-bottom: 30px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid #f5d5c8;
+      border-radius: 12px;
+      font-size: 14px;
+      background: white;
+      color: #5a4a3a;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(217, 125, 109, 0.15);
+    }
+    .product-card.reserved {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    .product-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #ffe8d1 0%, #ffd9c0 100%);
+    }
+    .product-info {
+      padding: 16px;
+    }
+    .product-name {
+      font-weight: 600;
+      color: #5a4a3a;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .product-description {
+      font-size: 12px;
+      color: #a88070;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: #d97d6d;
+      margin-bottom: 12px;
+    }
+    .reserve-btn {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, #d97d6d 0%, #e8997f 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .reserved-badge {
+      background: #e8d4c8;
+      color: #8b6f61;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 450px;
+      width: 90%;
+    }
+    .modal-header h2 {
+      font-size: 20px;
+      color: #5a4a3a;
+      margin-bottom: 20px;
+    }
+    .modal-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: #5a4a3a;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #f5d5c8;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #5a4a3a;
+    }
+    .modal-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn-cancel {
+      flex: 1;
+      padding: 12px;
+      background: #f5d5c8;
+      color: #5a4a3a;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-confirm {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(135deg, #d97d6d 0%, #e8997f 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .summary-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .summary-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: #d97d6d;
+      margin-bottom: 8px;
+    }
+    .summary-label {
+      font-size: 14px;
+      color: #a88070;
+      font-weight: 600;
+    }
+    .reservations-list {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .reservation-item {
+      padding: 16px;
+      border-bottom: 1px solid #f5d5c8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .reservation-product {
+      font-weight: 600;
+      color: #5a4a3a;
+      font-size: 14px;
+    }
+    .reservation-buyer {
+      font-size: 13px;
+      color: #a88070;
+    }
+    .success-message {
+      background: #d4e8d4;
+      color: #4a6f4a;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+    }
+    .success-message.show {
+      display: block;
+    }
+    .no-results {
+      text-align: center;
+      padding: 40px 20px;
+      color: #a88070;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #a88070;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✨ Mi Baby Shower ✨</h1>
+      <p>Elige un regalo para reservarlo con tu nombre</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('products')">🎁 Productos</button>
+      <button class="tab-btn" onclick="switchTab('summary')">📊 Resumen</button>
+      <button class="tab-btn" onclick="switchTab('reservations')">📋 Reservas</button>
+    </div>
+
+    <div id="products" class="tab-content active">
+      <div class="success-message" id="successMsg">✓ ¡Reserva confirmada!</div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Busca un producto...">
+      </div>
+      <div id="productsContainer" class="products-grid"></div>
+      <div id="noResults" class="no-results" style="display:none;">
+        <p>No hay productos que coincidan</p>
+      </div>
+    </div>
+
+    <div id="summary" class="tab-content">
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-number" id="totalProducts">0</div>
+          <div class="summary-label">Total de productos</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-number" id="reservedCount">0</div>
+          <div class="summary-label">Reservados</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-number" id="availableCount">0</div>
+          <div class="summary-label">Disponibles</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-number" id="percentageReserved">0%</div>
+          <div class="summary-label">Progreso</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="reservations" class="tab-content">
+      <div id="reservationsList" class="reservations-list"></div>
+      <div id="emptyReservations" class="empty-state" style="display:none;">
+        <p>Aún no hay reservas</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <button onclick="closeModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+      <div class="modal-header">
+        <h2>Reservar Regalo</h2>
+      </div>
+      <img id="modalImage" class="modal-image" src="">
+      <div class="form-group">
+        <label for="buyerName">Tu nombre completo *</label>
+        <input type="text" id="buyerName" required placeholder="Ej: María García">
+      </div>
+      <div class="form-group">
+        <label for="buyerEmail">Tu email *</label>
+        <input type="email" id="buyerEmail" required placeholder="tu@email.com">
+      </div>
+      <div class="modal-buttons">
+        <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+        <button class="btn-confirm" onclick="submitReservation()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let products = [
+      { id: 1, name: "Carriola Convertible 3 en 1", price: "$15,000", description: "Convertible, ligera y resistente", image: "https://images.unsplash.com/photo-1544014873-2cbbf6e66d6e?w=400&h=300&fit=crop" },
+      { id: 2, name: "Cuna Corral Portátil", price: "$8,500", description: "Segura y fácil de transportar", image: "https://images.unsplash.com/photo-1632196867669-0c8fa333c937?w=400&h=300&fit=crop" },
+      { id: 3, name: "Monitor de Bebé WiFi", price: "$3,200", description: "Pantalla HD con visión nocturna", image: "https://images.unsplash.com/photo-1606186842523-d3b14e6e9fa9?w=400&h=300&fit=crop" },
+      { id: 4, name: "Asiento de Auto Seguridad", price: "$7,800", description: "Reclinable hasta los 36kg", image: "https://images.unsplash.com/photo-1584875645684-e6f1a4a18e65?w=400&h=300&fit=crop" },
+      { id: 5, name: "Set de Cuidado Completo", price: "$2,500", description: "Pañalera, termómetro, cortaúñas", image: "https://images.unsplash.com/photo-1585076243d18-87c25dd183c1?w=400&h=300&fit=crop" },
+      { id: 6, name: "Extractor de Leche Eléctrico", price: "$5,900", description: "Doble extracción, silencioso", image: "https://images.unsplash.com/photo-1597979459849-d4e8a5d9c91d?w=400&h=300&fit=crop" },
+    ];
+    let reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
+    let currentProductId = null;
+
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+      if (tabName === 'summary') updateSummary();
+      if (tabName === 'reservations') updateReservationsList();
+    }
+
+    function renderProducts(filtered = products) {
+      const container = document.getElementById('productsContainer');
+      const noResults = document.getElementById('noResults');
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+      noResults.style.display = 'none';
+      container.innerHTML = filtered.map(product => {
+        const reserved = reservations[product.id];
+        return `
+          <div class="product-card ${reserved ? 'reserved' : ''}" onclick="${reserved ? '' : `openModal(${product.id})`}">
+            <img src="${product.image}" class="product-image" alt="${product.name}">
+            <div class="product-info">
+              <div class="product-name">${product.name}</div>
+              <div class="product-description">${product.description}</div>
+              <div class="product-price">${product.price}</div>
+              ${reserved ? `<div class="reserved-badge">✓ ${reserved.name}</div>` : `<button class="reserve-btn" onclick="event.stopPropagation(); openModal(${product.id})">Comprar regalo</button>`}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openModal(productId) {
+      currentProductId = productId;
+      const product = products.find(p => p.id === productId);
+      document.getElementById('modalImage').src = product.image;
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function submitReservation() {
+      const name = document.getElementById('buyerName').value.trim();
+      const email = document.getElementById('buyerEmail').value.trim();
+      if (!name || !email) {
+        alert('Por favor completa los campos');
+        return;
+      }
+      const product = products.find(p => p.id === currentProductId);
+      reservations[currentProductId] = { name, email, date: new Date().toLocaleDateString('es-ES') };
+      localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
+      closeModal();
+      renderProducts();
+      document.getElementById('successMsg').classList.add('show');
+      setTimeout(() => document.getElementById('successMsg').classList.remove('show'), 3000);
+    }
+
+    function updateSummary() {
+      const total = products.length;
+      const reserved = Object.keys(reservations).length;
+      const available = total - reserved;
+      const percentage = Math.round((reserved / total) * 100);
+      document.getElementById('totalProducts').textContent = total;
+      document.getElementById('reservedCount').textContent = reserved;
+      document.getElementById('availableCount').textContent = available;
+      document.getElementById('percentageReserved').textContent = percentage + '%';
+    }
+
+    function updateReservationsList() {
+      const list = document.getElementById('reservationsList');
+      const empty = document.getElementById('emptyReservations');
+      const items = Object.entries(reservations).map(([id, res]) => `
+        <div class="reservation-item">
+          <div>
+            <div class="reservation-product">${products.find(p => p.id == id)?.name}</div>
+            <div class="reservation-buyer">${res.name}</div>
+          </div>
+        </div>
+      `).join('');
+      if (items) {
+        list.innerHTML = items;
+        empty.style.display = 'none';
+      } else {
+        empty.style.display = 'block';
+      }
+    }
+
+    document.getElementById('searchInput')?.addEventListener('input', (e) => {
+      const search = e.target.value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(search) || p.description.toLowerCase().includes(search));
+      renderProducts(filtered);
+    });
+
+    document.getElementById('modalOverlay')?.addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    });
+
+    renderProducts();
+  </script>
+</body>
+</html>
