@@ -88,10 +88,10 @@
     @media (max-width: 768px) {
       .container { padding: 0 15px; }
       .header { padding: 40px 20px; }
-      .header-title { font-size: 36px; }
-      .header-name { font-size: 28px; }
+      .header-title { font-size: 52px; }
+      .header-name { font-size: 42px; }
       .header-message { font-size: 14px; }
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
       .product-card { border-radius: 4px; }
       .product-info { padding: 10px; }
       .product-name { font-size: 11px; }
@@ -103,10 +103,11 @@
     }
 
     @media (max-width: 480px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .container { padding: 0 10px; }
       .header { padding: 30px 15px; }
-      .header-title { font-size: 28px; padding-bottom: 16px; }
-      .header-name { font-size: 22px; margin: 16px 0; }
+      .header-title { font-size: 42px; padding-bottom: 16px; }
+      .header-name { font-size: 36px; margin: 16px 0; }
       .header-message { font-size: 13px; }
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
       .product-image { height: 100px; }
@@ -243,15 +244,15 @@
   <script>
     let products = [
       { id: 1, name: "Nido Colecho Reversible", price: "$44.990", description: "Olivia y Sam", image: "https://cdnx.jumpseller.com/olivia-y-sam/image/47189929/8.jpg?1750533501", store: "Olivia y Sam", url: "https://www.oliviaysam.com/nido-colecho-reversible-oceano" },
-      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6", image: "https://via.placeholder.com/200x130?text=Saco", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
-      { id: 3, name: "Toalla con Capucha", price: "$15.990", description: "Suave y absorbente", image: "https://via.placeholder.com/200x130?text=Toalla", store: "IKEA", url: "https://www.ikea.com/cl/es/p/groenfink-toalla-de-bebe-con-capucha-amarillo-70572369/" },
-      { id: 4, name: "Cojín de Lactancia", price: "$24.990", description: "Cojín ergonómico", image: "https://via.placeholder.com/200x130?text=Cojin", store: "IKEA", url: "https://www.ikea.com/cl/es/p/len-cojin-de-lactancia-gris-20400243/" },
+      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Saco", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
+      { id: 3, name: "Toalla con Capucha", price: "$15.990", description: "Suave y absorbente", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Toalla", store: "IKEA", url: "https://www.ikea.com/cl/es/p/groenfink-toalla-de-bebe-con-capucha-amarillo-70572369/" },
+      { id: 4, name: "Cojín de Lactancia", price: "$24.990", description: "Cojín ergonómico", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Cojin", store: "IKEA", url: "https://www.ikea.com/cl/es/p/len-cojin-de-lactancia-gris-20400243/" },
       { id: 5, name: "Termómetro Ambiental", price: "$9.990", description: "Temperatura y humedad", image: "https://mamasmateas.com/cdn/shop/files/Termometro_y_higrometro_Mamas_Mateas_c0e5b7c0-edef-49e4-a798-d061de5fa1a2.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/termometro-ambiental?_pos=3&_sid=696cc7af8&_ss=r" },
-      { id: 6, name: "Cepillo Limpieza Silicona", price: "$8.990", description: "Para limpiar biberones", image: "https://via.placeholder.com/200x130?text=Cepillo", store: "Mamás Mateas", url: "https://mamasmateas.com/products/cepillo-de-limpieza-de-silicona-gris" },
-      { id: 7, name: "Calentador Mamaderas", price: "$34.990", description: "Calienta rápidamente", image: "https://via.placeholder.com/200x130?text=Calentador", store: "Mamás Mateas", url: "https://mamasmateas.com/products/calentador-de-mamaderas" },
-      { id: 8, name: "Silla de Comer Evolutiva", price: "$149.990", description: "Madera natural", image: "https://via.placeholder.com/200x130?text=Silla", store: "Mamás Mateas", url: "https://mamasmateas.com/products/silla-de-comer-evolutiva-enock-madera-natural" },
-      { id: 9, name: "Portabebé 3 en 1", price: "$89.990", description: "Posiciones múltiples", image: "https://via.placeholder.com/200x130?text=Portabebe", store: "Mamás Mateas", url: "https://mamasmateas.com/products/portabebe-3-en-1" },
-      { id: 10, name: "Kit Tummy Time", price: "$29.990", description: "Tiempo boca abajo", image: "https://via.placeholder.com/200x130?text=Kit", store: "Mamás Mateas", url: "https://mamasmateas.com/products/kit-para-recien-nacidos-tiempo-boca-abajo" },
+      { id: 6, name: "Cepillo Limpieza Silicona", price: "$8.990", description: "Para limpiar biberones", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Cepillo", store: "Mamás Mateas", url: "https://mamasmateas.com/products/cepillo-de-limpieza-de-silicona-gris" },
+      { id: 7, name: "Calentador Mamaderas", price: "$34.990", description: "Calienta rápidamente", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Calentador", store: "Mamás Mateas", url: "https://mamasmateas.com/products/calentador-de-mamaderas" },
+      { id: 8, name: "Silla de Comer Evolutiva", price: "$149.990", description: "Madera natural", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Silla", store: "Mamás Mateas", url: "https://mamasmateas.com/products/silla-de-comer-evolutiva-enock-madera-natural" },
+      { id: 9, name: "Portabebé 3 en 1", price: "$89.990", description: "Posiciones múltiples", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Portabebe", store: "Mamás Mateas", url: "https://mamasmateas.com/products/portabebe-3-en-1" },
+      { id: 10, name: "Kit Tummy Time", price: "$29.990", description: "Tiempo boca abajo", image: "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22130%22%3E%3Crect fill=%22%23e8f0ed%22 width=%22200%22 height=%22130%22/%3E%3C/svg%3E" alt="Kit", store: "Mamás Mateas", url: "https://mamasmateas.com/products/kit-para-recien-nacidos-tiempo-boca-abajo" },
       { id: 11, name: "Set Cepillo y Peineta", price: "$14.990", description: "Madera natural", image: "https://mamasmateas.com/cdn/shop/files/Disenosintitulo_38_7b94dbf6-d7eb-4eca-b864-99272861aced.jpg", store: "Mamás Mateas", url: "https://mamasmateas.com/products/set-cepillo-y-peineta-mamas-mateas" },
       { id: 12, name: "Sábana Cuna Grande", price: "$28.000", description: "Algodón 100%", image: "https://farfallina.cl/cdn/shop/files/sabanaguardalinoblanco.jpg", store: "Casa Ideas", url: "https://www.casaideas.cl/producto/3119250000436-set-sabanas-estampadas-para-cuna-100x160-cm.html" },
       { id: 13, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
