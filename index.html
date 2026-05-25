@@ -8,17 +8,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #333; line-height: 1.6; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-    .header { padding: 80px 40px; text-align: center; border-bottom: 1px solid #e0e0e0; }
-    .header-date { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 24px; font-weight: 500; }
-    .header-title { font-size: 56px; font-weight: 300; letter-spacing: -2px; margin-bottom: 12px; color: #1a1a1a; padding-bottom: 0; border-bottom: none; }
-    .header-name { font-size: 64px; font-weight: 700; color: #2d5a4a; margin: 20px 0 40px 0; }
+    .header { padding: 60px 40px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+    .header-date { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 24px; font-weight: 600; }
+    .header-title { font-size: 96px; font-weight: 300; letter-spacing: -2px; margin-bottom: 12px; color: #1a1a1a; padding-bottom: 0; border-bottom: none; }
+    .header-name { font-size: 120px; font-weight: 700; color: #2d5a4a; margin: 0 0 40px 0; line-height: 0.95; }
     .header-message { font-size: 15px; line-height: 1.8; color: #555; max-width: 550px; margin: 0 auto; font-weight: 300; }
     .separator { width: 60px; height: 1px; background: #e0e0e0; margin: 24px auto 24px auto; }
     .message-section { margin: 60px 0; }
     .message-box { background: #fafafa; padding: 40px; border-radius: 8px; border: 1px solid #f0f0f0; }
-    .message-box p { font-size: 14px; line-height: 1.8; color: #555; margin-bottom: 16px; font-weight: 300; }
+    .message-box p { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px; font-weight: 300; }
     .message-box p:last-child { margin-bottom: 0; }
-    .note-box { background: white; border-left: 4px solid #2d5a4a; padding: 16px; margin-top: 16px; border-radius: 4px; font-size: 13px; line-height: 1.7; color: #666; text-align: justify; }
+    .note-box { background: white; border-left: 4px solid #2d5a4a; padding: 16px; margin-top: 16px; border-radius: 4px; font-size: 15px; line-height: 1.7; color: #666; text-align: justify; }
     .note-box.dark { background: #e8f0ed; border-left: 4px solid #2d5a4a; color: #2d5a4a; }
     .note-box.dark strong { color: #2d5a4a; font-weight: 600; }
     .note-box strong { color: #2d5a4a; font-weight: 500; }
@@ -88,8 +88,8 @@
     @media (max-width: 768px) {
       .container { padding: 0 15px; }
       .header { padding: 40px 20px; }
-      .header-title { font-size: 36px; }
-      .header-name { font-size: 28px; }
+      .header-title { font-size: 72px; }
+      .header-name { font-size: 96px; }
       .header-message { font-size: 14px; }
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
       .product-card { border-radius: 4px; }
@@ -105,10 +105,10 @@
     @media (max-width: 480px) {
       .container { padding: 0 10px; }
       .header { padding: 30px 15px; }
-      .header-title { font-size: 28px; padding-bottom: 16px; }
-      .header-name { font-size: 22px; margin: 16px 0; }
+      .header-title { font-size: 56px; padding-bottom: 16px; }
+      .header-name { font-size: 72px; margin: 16px 0; }
       .header-message { font-size: 13px; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
       .product-image { height: 100px; }
       .product-store { font-size: 9px; }
       .product-name { font-size: 10px; }
@@ -242,40 +242,40 @@
 
   <script>
     let products = [
-      { id: 1, name: "Nido Colecho Reversible", price: "$44.990", description: "Olivia y Sam", image: "https://cdnx.jumpseller.com/olivia-y-sam/image/47189929/8.jpg?1750533501", store: "Olivia y Sam", url: "https://www.oliviaysam.com/nido-colecho-reversible-oceano" },
-      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6", image: "https://via.placeholder.com/200x130?text=Saco", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
-      { id: 3, name: "Toalla con Capucha", price: "$15.990", description: "Suave y absorbente", image: "https://via.placeholder.com/200x130?text=Toalla", store: "IKEA", url: "https://www.ikea.com/cl/es/p/groenfink-toalla-de-bebe-con-capucha-amarillo-70572369/" },
-      { id: 4, name: "Cojín de Lactancia", price: "$24.990", description: "Cojín ergonómico", image: "https://via.placeholder.com/200x130?text=Cojin", store: "IKEA", url: "https://www.ikea.com/cl/es/p/len-cojin-de-lactancia-gris-20400243/" },
-      { id: 5, name: "Termómetro Ambiental", price: "$9.990", description: "Temperatura y humedad", image: "https://mamasmateas.com/cdn/shop/files/Termometro_y_higrometro_Mamas_Mateas_c0e5b7c0-edef-49e4-a798-d061de5fa1a2.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/termometro-ambiental?_pos=3&_sid=696cc7af8&_ss=r" },
-      { id: 6, name: "Cepillo Limpieza Silicona", price: "$8.990", description: "Para limpiar biberones", image: "https://via.placeholder.com/200x130?text=Cepillo", store: "Mamás Mateas", url: "https://mamasmateas.com/products/cepillo-de-limpieza-de-silicona-gris" },
-      { id: 7, name: "Calentador Mamaderas", price: "$34.990", description: "Calienta rápidamente", image: "https://via.placeholder.com/200x130?text=Calentador", store: "Mamás Mateas", url: "https://mamasmateas.com/products/calentador-de-mamaderas" },
-      { id: 8, name: "Silla de Comer Evolutiva", price: "$149.990", description: "Madera natural", image: "https://via.placeholder.com/200x130?text=Silla", store: "Mamás Mateas", url: "https://mamasmateas.com/products/silla-de-comer-evolutiva-enock-madera-natural" },
-      { id: 9, name: "Portabebé 3 en 1", price: "$89.990", description: "Posiciones múltiples", image: "https://via.placeholder.com/200x130?text=Portabebe", store: "Mamás Mateas", url: "https://mamasmateas.com/products/portabebe-3-en-1" },
-      { id: 10, name: "Kit Tummy Time", price: "$29.990", description: "Tiempo boca abajo", image: "https://via.placeholder.com/200x130?text=Kit", store: "Mamás Mateas", url: "https://mamasmateas.com/products/kit-para-recien-nacidos-tiempo-boca-abajo" },
-      { id: 11, name: "Set Cepillo y Peineta", price: "$14.990", description: "Madera natural", image: "https://mamasmateas.com/cdn/shop/files/Disenosintitulo_38_7b94dbf6-d7eb-4eca-b864-99272861aced.jpg", store: "Mamás Mateas", url: "https://mamasmateas.com/products/set-cepillo-y-peineta-mamas-mateas" },
-      { id: 12, name: "Sábana Cuna Grande", price: "$28.000", description: "Algodón 100%", image: "https://farfallina.cl/cdn/shop/files/sabanaguardalinoblanco.jpg", store: "Casa Ideas", url: "https://www.casaideas.cl/producto/3119250000436-set-sabanas-estampadas-para-cuna-100x160-cm.html" },
-      { id: 13, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 14, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 15, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 16, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 17, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 18, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 19, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 20, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 21, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "https://mamasmateas.com/cdn/shop/files/PigeonMamasMateas_4.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 1, name: "Nido Colecho Reversible", price: "$44.990", description: "Olivia y Sam", image: "imagenes/Nido Colecho Reversible.png", store: "Olivia y Sam", url: "https://www.oliviaysam.com/nido-colecho-reversible-petit-lapin" },
+      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6", image: "imagenes/Saco de Dormir GULDVÄVARE.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
+      { id: 3, name: "Toalla con Capucha", price: "$15.990", description: "Suave y absorbente", image: "imagenes/Toalla con Capucha.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/groenfink-toalla-de-bebe-con-capucha-amarillo-70572369/" },
+      { id: 4, name: "Cojín de Lactancia", price: "$24.990", description: "Cojín ergonómico", image: "imagenes/Cojín de Lactancia.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/len-cojin-de-lactancia-gris-20400243/" },
+      { id: 5, name: "Termómetro Ambiental", price: "$9.990", description: "Temperatura y humedad", image: "imagenes/Termómetro Ambiental.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/termometro-ambiental?_pos=3&_sid=696cc7af8&_ss=r" },
+      { id: 6, name: "Cepillo Limpieza Silicona", price: "$8.990", description: "Para limpiar biberones", image: "imagenes/Cepillo Limpieza Silicona.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/cepillo-de-limpieza-de-silicona-gris" },
+      { id: 7, name: "Calentador Mamaderas", price: "$34.990", description: "Calienta rápidamente", image: "imagenes/Calentador Mamaderas.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/calentador-de-mamaderas" },
+      { id: 8, name: "Silla de Comer Evolutiva", price: "$149.990", description: "Madera natural", image: "imagenes/Silla de Comer Evolutiva.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/silla-de-comer-evolutiva-enock-madera-natural" },
+      { id: 9, name: "Portabebé 3 en 1", price: "$89.990", description: "Posiciones múltiples", image: "imagenes/Portabebé 3 en 1.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/portabebe-3-en-1" },
+      { id: 10, name: "Kit Tummy Time", price: "$29.990", description: "Tiempo boca abajo", image: "imagenes/Kit Tummy Time.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/kit-para-recien-nacidos-tiempo-boca-abajo" },
+      { id: 11, name: "Set Cepillo y Peineta", price: "$14.990", description: "Madera natural", image: "imagenes/Set Cepillo y Peineta.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/set-cepillo-y-peineta-mamas-mateas" },
+      { id: 12, name: "Sábana Cuna Grande", price: "$28.000", description: "Algodón 100%", image: "imagenes/Sábana Cuna Grande.png", store: "Casa Ideas", url: "https://www.casaideas.cl/producto/3119250000436-set-sabanas-estampadas-para-cuna-100x160-cm.html" },
+      { id: 13, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 14, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 15, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 16, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 17, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 18, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 19, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 20, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
+      { id: 21, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
       { id: 22, name: "Contenedor Pañales", price: "$54.990", description: "Tommee Tippee", image: "https://mamasmateas.com/cdn/shop/files/TommeeTippeeMamasMateas_2_809c58df-eb9f-4f4c-b2b1-240da5340a78.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/contenedor-de-panales-sangenic-twist-click-tommee-tippee" },
-      { id: 23, name: "Dosificador Fórmula", price: "$9.990", description: "Dosë, 3 compartimentos", image: "https://mamasmateas.com/cdn/shop/products/dispensador.jpg", store: "Mamás Mateas", url: "https://mamasmateas.com/products/dispensador-multiuso-dose" },
-      { id: 24, name: "Sábana Bajera Colecho", price: "$14.990", description: "Farfallina blanco crema", image: "https://farfallina.cl/cdn/shop/files/wbajeracrema.jpg", store: "Farfallina", url: "https://farfallina.cl/collections/sabanas-colecho/products/sabana-bajera-colecho-blanco-crema" },
-      { id: 25, name: "Cubrecolchón Colecho", price: "$14.000", description: "Impermeable Farfallina", image: "https://farfallina.cl/cdn/shop/files/protectorcolchon_4efbece2-dac3-4bc3-b538-d19fdaa9039e.jpg", store: "Farfallina", url: "https://farfallina.cl/collections/cubrecolchon/products/cubrecolchon_impermeable_colecho" },
-      { id: 26, name: "Bolso Clásico Vichy", price: "$64.990", description: "miNest impermeable", image: "https://minest.cl/cdn/shop/files/BolsoClasicoVichyGris.jpg", store: "miNest", url: "https://minest.cl/products/bolso-clasico-vichy-nube" },
-      { id: 27, name: "Cobertor Colecho", price: "$14.990", description: "Carestino blanco", image: "https://carestino.cc/_next/image/?url=https%3A%2F%2Fcarestino.cc%2Fuploads%2Fproductos_imagen_1_7217_ar-1753998474.jpg&w=1920&q=75", store: "Carestino", url: "https://www.carestino.cl/producto/cobertor-para-colecho-de-50x85cm-blanco/" },
-      { id: 28, name: "Mudador Portátil Vichy", price: "$26.990", description: "miNest impermeable", image: "https://minest.cl/cdn/shop/files/MudadorPortatilVichyGris.jpg", store: "miNest", url: "https://minest.cl/products/mudador-portatil-vichy-gris" },
-      { id: 29, name: "Saco Dormir Verano", price: "$36.990", description: "Lou Bloom TOG 0.5", image: "http://www.loubloom.com/cdn/shop/files/113b0430-6e3b-4065-9927-916e24d375a1_grande.jpg?v=1764283855", store: "Lou Bloom", url: "https://www.loubloom.com/products/saco-de-dormir-verano-vert-tog-0-5-algodon-organico-copia" },
-      { id: 30, name: "Organizador Cuna", price: "$22.990", description: "Lou Bloom verde eucalipto", image: "http://www.loubloom.com/cdn/shop/files/ModeMinimalInstagramPublier_StoryInstagram_ReelInstagram_ReelInstagram_-20_grande.jpg?v=1701551224", store: "Lou Bloom", url: "https://www.loubloom.com/products/organizador-de-cuna-muselina-verde-eucalipto-algodon-organico" },
-      { id: 31, name: "Protector Cuna", price: "$46.990", description: "Lou Bloom verde eucalipto", image: "http://www.loubloom.com/cdn/shop/files/ModeMinimalInstagramPublier_StoryInstagram_ReelInstagram_ReelInstagram_-5_grande.jpg?v=1722355515", store: "Lou Bloom", url: "https://www.loubloom.com/products/protector-de-cuna-muselina-verde-eucalipto-liso-en-algodon-organico" },
-      { id: 32, name: "Mudador Portátil Terciopelo", price: "$21.990", description: "Lou Bloom azul marino", image: "http://www.loubloom.com/cdn/shop/files/MG_9685_3dd746a9-1373-4369-b64e-bc782f057cbd_grande.jpg?v=1690492020", store: "Lou Bloom", url: "https://www.loubloom.com/products/mudador-portatil-eco-terciopelo-azul-marino" },
-      { id: 33, name: "Kit Babyshower 3 Baberos", price: "$23.990", description: "Lou Bloom reversibles", image: "http://www.loubloom.com/cdn/shop/products/image00023_grande.jpg?v=1668563419", store: "Lou Bloom", url: "https://www.loubloom.com/products/copia-de-kit-babyshower-3-baberos" },
-      { id: 34, name: "Toalla Bebé Muselina", price: "$21.990", description: "Lou Bloom con capucha", image: "http://www.loubloom.com/cdn/shop/products/TLB-90-2_55b23a70-97e3-44c2-bc2a-774d6f59b04b_grande.jpg?v=1658714871", store: "Lou Bloom", url: "https://www.loubloom.com/products/toalla-bebe-muselina-verde-eucalipto-en-algodon-organico-500gsm" },
+      { id: 23, name: "Dosificador Fórmula", price: "$9.990", description: "Dosë, 3 compartimentos", image: "imagenes/Dosificador Fórmula.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/dispensador-multiuso-dose" },
+      { id: 24, name: "Sábana Bajera Colecho", price: "$14.990", description: "Farfallina blanco crema", image: "imagenes/Sábana Bajera Colecho.png", store: "Farfallina", url: "https://farfallina.cl/collections/sabanas-colecho/products/sabana-bajera-colecho-blanco-crema" },
+      { id: 25, name: "Cubrecolchón Colecho", price: "$14.000", description: "Impermeable Farfallina", image: "imagenes/Cubrecolchón Colecho.png", store: "Farfallina", url: "https://farfallina.cl/collections/cubrecolchon/products/cubrecolchon_impermeable_colecho" },
+      { id: 26, name: "Bolso Clásico Vichy", price: "$64.990", description: "miNest impermeable", image: "imagenes/Bolso Clásico Vichy.png", store: "miNest", url: "https://minest.cl/products/bolso-clasico-vichy-nube" },
+      { id: 27, name: "Cobertor Colecho", price: "$14.990", description: "Carestino blanco", image: "imagenes/Cobertor Colecho.png", store: "Carestino", url: "https://www.carestino.cl/producto/cobertor-para-colecho-de-50x85cm-blanco/" },
+      { id: 28, name: "Mudador Portátil Vichy", price: "$26.990", description: "miNest impermeable", image: "imagenes/Mudador Portátil Vichy.png", store: "miNest", url: "https://minest.cl/products/mudador-portatil-vichy-gris" },
+      { id: 29, name: "Saco Dormir Verano", price: "$36.990", description: "Lou Bloom TOG 0.5", image: "imagenes/Saco Dormir Verano.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/saco-de-dormir-verano-vert-tog-0-5-algodon-organico-copia" },
+      { id: 30, name: "Organizador Cuna", price: "$22.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Organizador Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/organizador-de-cuna-muselina-verde-eucalipto-algodon-organico" },
+      { id: 31, name: "Protector Cuna", price: "$46.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Protector Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/protector-de-cuna-muselina-verde-eucalipto-liso-en-algodon-organico" },
+      { id: 32, name: "Mudador Portátil Terciopelo", price: "$21.990", description: "Lou Bloom azul marino", image: "imagenes/Mudador Portátil Terciopelo.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/mudador-portatil-eco-terciopelo-azul-marino" },
+      { id: 33, name: "Kit Babyshower 3 Baberos", price: "$23.990", description: "Lou Bloom reversibles", image: "imagenes/Kit Babyshower 3 Baberos.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/copia-de-kit-babyshower-3-baberos" },
+      { id: 34, name: "Toalla Bebé Muselina", price: "$21.990", description: "Lou Bloom con capucha", image: "imagenes/Toalla Bebé Muselina.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/toalla-bebe-muselina-verde-eucalipto-en-algodon-organico-500gsm" },
     ];
 
     let reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
