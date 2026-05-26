@@ -10,15 +10,15 @@
     .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
     .header { padding: 80px 40px; text-align: center; border-bottom: 1px solid #e0e0e0; }
     .header-date { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 24px; font-weight: 600; }
-    .header-title { font-size: 56px; font-weight: 300; letter-spacing: -2px; margin-bottom: 12px; color: #1a1a1a; padding-bottom: 0; border-bottom: none; }
+    .header-title { font-size: 96px; font-weight: 300; letter-spacing: -2px; margin-bottom: 0; color: #1a1a1a; line-height: 1; }
     .header-name { font-size: 120px; font-weight: 700; color: #2d5a4a; margin: 0 0 40px 0; line-height: 0.95; }
     .header-message { font-size: 15px; line-height: 1.8; color: #555; max-width: 550px; margin: 0 auto; font-weight: 300; }
-    .separator { width: 60px; height: 1px; background: #e0e0e0; margin: 24px auto 24px auto; }
+    .separator { width: 60px; height: 1px; background: #e0e0e0; margin: 24px auto; }
     .message-section { margin: 60px 0; }
     .message-box { background: #fafafa; padding: 40px; border-radius: 8px; border: 1px solid #f0f0f0; }
-    .message-box p { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px; font-weight: 300; }
+    .message-box p { font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px; font-weight: 300; text-align: justify; }
     .message-box p:last-child { margin-bottom: 0; }
-    .note-box { background: white; border-left: 4px solid #2d5a4a; padding: 16px; margin-top: 16px; border-radius: 4px; font-size: 13px; line-height: 1.7; color: #666; text-align: justify; }
+    .note-box { background: white; border-left: 4px solid #2d5a4a; padding: 16px; margin-top: 16px; border-radius: 4px; font-size: 15px; line-height: 1.7; color: #666; text-align: justify; }
     .note-box.dark { background: #e8f0ed; border-left: 4px solid #2d5a4a; color: #2d5a4a; }
     .note-box.dark strong { color: #2d5a4a; font-weight: 600; }
     .note-box strong { color: #2d5a4a; font-weight: 500; }
@@ -57,89 +57,45 @@
     .modal-product-name { font-size: 14px; font-weight: 600; color: #2d5a4a; }
     .modal-image { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin: 16px 0; }
     .modal-link { display: inline-block; margin-bottom: 20px; }
-    .modal-link a { color: #2d5a4a; text-decoration: none; font-size: 12px; font-weight: 500; border-bottom: 1px solid #2d5a4a; transition: all 0.3s; }
-    .modal-link a:hover { color: #1a3a2a; }
+    .modal-link a { color: #2d5a4a; text-decoration: none; font-size: 12px; font-weight: 500; border-bottom: 1px solid #2d5a4a; }
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 11px; color: #666; margin-bottom: 6px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
     .form-group input { width: 100%; padding: 9px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 13px; color: #333; font-weight: 300; }
     .form-group input:focus { outline: none; border-color: #2d5a4a; }
     .info-text { font-size: 12px; color: #999; margin-bottom: 20px; line-height: 1.6; font-style: italic; }
     .modal-buttons { display: flex; gap: 10px; margin-top: 24px; }
-    .btn-cancel { flex: 1; padding: 10px; background: #f5f5f5; color: #666; border: none; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 12px; transition: all 0.3s; }
-    .btn-cancel:hover { background: #e0e0e0; }
-    .btn-confirm { flex: 1; padding: 10px; background: #2d5a4a; color: white; border: none; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 12px; transition: all 0.3s; }
+    .btn-cancel { flex: 1; padding: 10px; background: #f5f5f5; color: #666; border: none; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 12px; }
+    .btn-confirm { flex: 1; padding: 10px; background: #2d5a4a; color: white; border: none; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 12px; }
     .btn-confirm:hover { background: #1a3a2a; }
     .close-btn { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; }
     .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 40px; }
-    .summary-card { background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; text-align: center; transition: all 0.3s; }
-    .summary-card:hover { border-color: #2d5a4a; }
+    .summary-card { background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; text-align: center; }
     .summary-number { font-size: 28px; font-weight: 300; color: #2d5a4a; margin-bottom: 6px; }
     .summary-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
-    .reservations-list { background: white; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; }
-    .reservation-item { padding: 14px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
-    .reservation-item:last-child { border-bottom: none; }
-    .reservation-info h3 { font-size: 12px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
-    .reservation-info p { font-size: 11px; color: #999; margin: 0; }
-    .reservation-price { font-weight: 500; color: #2d5a4a; font-size: 12px; }
-    .empty-state { text-align: center; padding: 50px 20px; color: #999; font-size: 13px; }
     .success-message { background: #f0f0f0; color: #2d5a4a; padding: 12px; border-radius: 6px; margin-bottom: 20px; display: none; text-align: center; font-size: 12px; font-weight: 500; }
-    .success-message.show { display: block; animation: slideDown 0.3s ease; }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    .success-message.show { display: block; }
     @media (max-width: 768px) {
       .container { padding: 0 15px; }
       .header { padding: 40px 20px; }
-      .header-title { font-size: 36px; }
-      .header-name { font-size: 28px; }
-      .header-message { font-size: 14px; }
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-      .product-card { border-radius: 4px; }
-      .product-info { padding: 10px; }
-      .product-name { font-size: 11px; }
-      .summary-grid { grid-template-columns: repeat(2, 1fr); }
-      .modal-content { padding: 20px; }
-      .form-group input { padding: 8px 10px; font-size: 13px; }
-      .tabs { gap: 20px; }
-      .tab-btn { font-size: 12px; }
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 0 10px; }
-      .header { padding: 30px 15px; }
-      .header-title { font-size: 28px; padding-bottom: 16px; }
-      .header-name { font-size: 22px; margin: 16px 0; }
-      .header-message { font-size: 13px; }
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
-      .product-image { height: 100px; }
-      .product-store { font-size: 9px; }
-      .product-name { font-size: 10px; }
-      .product-price { font-size: 12px; }
-      .reserve-btn { font-size: 10px; padding: 6px; }
-      .summary-grid { grid-template-columns: 1fr; }
-      .summary-number { font-size: 24px; }
-      .modal-content { padding: 16px; max-width: 90vw; }
-      .modal-header h2 { font-size: 16px; }
-      .form-group label { font-size: 10px; }
-      .form-group input { font-size: 12px; padding: 8px; }
-      .btn-cancel, .btn-confirm { font-size: 11px; padding: 8px; }
-      .tabs { gap: 15px; }
-      .tab-btn { font-size: 11px; }
-      .note-box { font-size: 12px; padding: 12px; margin-top: 12px; }
-      .message-box { padding: 20px; }
-    }
-
-
-    @media (max-width: 768px) {
-      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
       .header-title { font-size: 52px; }
       .header-name { font-size: 72px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .tabs { gap: 20px; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
-      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .header-title { font-size: 42px; }
-      .header-name { font-size: 56px; }
       .container { padding: 0 10px; }
       .header { padding: 30px 15px; }
-      .modal-content { padding: 16px; }
+      .header-title { font-size: 42px; }
+      .header-name { font-size: 56px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .product-image { height: 100px; }
+      .product-name { font-size: 10px; }
+      .reserve-btn { font-size: 10px; padding: 6px; }
+      .modal-content { padding: 16px; max-width: 95vw; }
+      .message-box { padding: 20px; }
+      .message-box p { font-size: 14px; }
+      .note-box { font-size: 13px; }
     }
   </style>
 </head>
@@ -156,15 +112,12 @@
     <div class="message-section">
       <div class="message-box">
         <p>Hicimos una lista e investigamos cada producto para asegurar que sean seguros y funcionales para Clemente. Queremos evitar la acumulación de cosas, por lo tanto, estos son los productos que nos faltan y que vamos a necesitar en los primeros meses con Clemente.</p>
-        
         <div class="note-box">
           <strong>Pañales y leche:</strong> En el caso de que quieran regalarnos pañales y/o leche, no sabemos aún si Clemente tendrá alergias o sensibilidades. Por eso preferimos que sea en formato gift card donde vendan estos productos, así podremos elegir según sus necesidades.
         </div>
-        
         <div class="note-box">
           <strong>Ropa:</strong> Ya tenemos bastante ropa. Tampoco sabemos aún si será grande o pequeño, así que de momento no necesitamos más.
         </div>
-
         <div class="note-box dark">
           <strong>Acerca de las reservas:</strong> Al reservar un regalo, simplemente lo congelas para evitar que se repita. No quiere decir que automáticamente se compró. Cuando estés listo, el link del producto te llevará directamente para que lo compres.
         </div>
@@ -172,9 +125,8 @@
     </div>
 
     <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('products')">Productos</button>
-      <button class="tab-btn" onclick="switchTab('summary')">Resumen</button>
-      <button class="tab-btn" onclick="switchTab('reservations')">Reservas</button>
+      <button class="tab-btn active" onclick="switchTab('products', this)">Productos</button>
+      <button class="tab-btn" onclick="switchTab('summary', this)">Resumen</button>
     </div>
 
     <div id="products" class="tab-content active">
@@ -183,7 +135,7 @@
         <input type="text" id="searchInput" placeholder="Buscar un producto...">
       </div>
       <div id="productsContainer" class="products-grid"></div>
-      <div id="noResults" class="empty-state" style="display:none;">
+      <div id="noResults" style="display:none; text-align:center; padding:50px; color:#999; font-size:13px;">
         <p>No hay productos que coincidan</p>
       </div>
     </div>
@@ -208,17 +160,6 @@
         </div>
       </div>
     </div>
-
-    <div id="reservations" class="tab-content">
-            <div style="margin-bottom: 20px; display: flex; gap: 10px;">
-        <button onclick="downloadReservations()" style="padding: 12px 24px; background: #2d5a4a; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 13px;">📥 Descargar Reservas Excel</button>
-        <button onclick="copyReservationsJSON()" style="padding: 12px 24px; background: #666; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 13px;">📋 Copiar Datos JSON</button>
-      </div>
-      <div id="reservationsList" class="reservations-list"></div>
-      <div id="emptyReservations" class="empty-state" style="display:none;">
-        <p>Aún no hay reservas</p>
-      </div>
-    </div>
   </div>
 
   <div id="modalOverlay" class="modal-overlay">
@@ -232,16 +173,14 @@
       <div class="modal-link">
         <a id="modalProductLink" href="#" target="_blank">Ver producto en la tienda →</a>
       </div>
-      <div class="info-text">
-        Completa tus datos para que sepamos quién está regalando esto para Clemente.
-      </div>
+      <div class="info-text">Completa tus datos para que sepamos quién está regalando esto para Clemente.</div>
       <div class="form-group">
         <label for="buyerName">Tu nombre *</label>
-        <input type="text" id="buyerName" required placeholder="Tu nombre">
+        <input type="text" id="buyerName" placeholder="Tu nombre">
       </div>
       <div class="form-group">
         <label for="buyerEmail">Tu email *</label>
-        <input type="email" id="buyerEmail" required placeholder="tu@email.com">
+        <input type="email" id="buyerEmail" placeholder="tu@email.com">
       </div>
       <div class="form-group">
         <label for="buyerPhone">Tu teléfono (opcional)</label>
@@ -255,9 +194,11 @@
   </div>
 
   <script>
+    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec';
+
     let products = [
       { id: 1, name: "Nido Colecho Reversible", price: "$44.990", description: "Olivia y Sam", image: "imagenes/Nido Colecho Reversible.png", store: "Olivia y Sam", url: "https://www.oliviaysam.com/nido-colecho-reversible-petit-lapin" },
-      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6", image: "imagenes/Saco de Dormir GULDVÄVARE.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
+      { id: 2, name: "Saco de Dormir GULDVÄVARE", price: "$16.990", description: "Algodón orgánico 0-6 meses", image: "imagenes/Saco de Dormir GULDVÄVARE.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/guldvaevare-saco-de-dormir-beige-ocre-90588543/" },
       { id: 3, name: "Toalla con Capucha", price: "$15.990", description: "Suave y absorbente", image: "imagenes/Toalla con Capucha.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/groenfink-toalla-de-bebe-con-capucha-amarillo-70572369/" },
       { id: 4, name: "Cojín de Lactancia", price: "$24.990", description: "Cojín ergonómico", image: "imagenes/Cojín de Lactancia.png", store: "IKEA", url: "https://www.ikea.com/cl/es/p/len-cojin-de-lactancia-gris-20400243/" },
       { id: 5, name: "Termómetro Ambiental", price: "$9.990", description: "Temperatura y humedad", image: "imagenes/Termómetro Ambiental.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/termometro-ambiental?_pos=3&_sid=696cc7af8&_ss=r" },
@@ -268,16 +209,16 @@
       { id: 10, name: "Kit Tummy Time", price: "$29.990", description: "Tiempo boca abajo", image: "imagenes/Kit Tummy Time.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/kit-para-recien-nacidos-tiempo-boca-abajo" },
       { id: 11, name: "Set Cepillo y Peineta", price: "$14.990", description: "Madera natural", image: "imagenes/Set Cepillo y Peineta.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/set-cepillo-y-peineta-mamas-mateas" },
       { id: 12, name: "Sábana Cuna Grande", price: "$28.000", description: "Algodón 100%", image: "imagenes/Sábana Cuna Grande.png", store: "Casa Ideas", url: "https://www.casaideas.cl/producto/3119250000436-set-sabanas-estampadas-para-cuna-100x160-cm.html" },
-      { id: 13, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 14, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 15, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Pigeon", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 16, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 17, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 18, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Pigeon", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 19, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 20, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 21, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Pigeon", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp" },
-      { id: 22, name: "Contenedor Pañales", price: "$54.990", description: "Tommee Tippee", image: "imagenes/Contenedor Pañales.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/contenedor-de-panales-sangenic-twist-click-tommee-tippee" },
+      { id: 13, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Mamás Mateas", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016307962" },
+      { id: 14, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Mamás Mateas", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016307962" },
+      { id: 15, name: "Mamadera 160ml 0+ meses", price: "$9.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 160ml 0+ meses.png", store: "Mamás Mateas", tag: "0+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016307962" },
+      { id: 16, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Mamás Mateas", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016340730" },
+      { id: 17, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Mamás Mateas", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016340730" },
+      { id: 18, name: "Mamadera 240ml 3+ meses", price: "$10.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 240ml 3+ meses.png", store: "Mamás Mateas", tag: "3+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537016340730" },
+      { id: 19, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Mamás Mateas", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537019846906" },
+      { id: 20, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Mamás Mateas", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537019846906" },
+      { id: 21, name: "Mamadera 330ml 6+ meses", price: "$11.990", description: "Pigeon Softouch", image: "imagenes/Mamadera 330ml 6+ meses.png", store: "Mamás Mateas", tag: "6+ meses", url: "https://mamasmateas.com/products/mamadera-softouch-boca-ancha-pp?variant=47537019846906" },
+      { id: 22, name: "Contenedor Pañales", price: "$54.990", description: "Tommee Tippee Sangenic", image: "imagenes/Contenedor Pañales.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/contenedor-de-panales-sangenic-twist-click-tommee-tippee" },
       { id: 23, name: "Dosificador Fórmula", price: "$9.990", description: "Dosë, 3 compartimentos", image: "imagenes/Dosificador Fórmula.png", store: "Mamás Mateas", url: "https://mamasmateas.com/products/dispensador-multiuso-dose" },
       { id: 24, name: "Sábana Bajera Colecho", price: "$14.990", description: "Farfallina blanco crema", image: "imagenes/Sábana Bajera Colecho.png", store: "Farfallina", url: "https://farfallina.cl/collections/sabanas-colecho/products/sabana-bajera-colecho-blanco-crema" },
       { id: 25, name: "Cubrecolchón Colecho", price: "$14.000", description: "Impermeable Farfallina", image: "imagenes/Cubrecolchón Colecho.png", store: "Farfallina", url: "https://farfallina.cl/collections/cubrecolchon/products/cubrecolchon_impermeable_colecho" },
@@ -285,18 +226,15 @@
       { id: 27, name: "Cobertor Colecho", price: "$14.990", description: "Carestino blanco", image: "imagenes/Cobertor Colecho.png", store: "Carestino", url: "https://www.carestino.cl/producto/cobertor-para-colecho-de-50x85cm-blanco/" },
       { id: 28, name: "Mudador Portátil Vichy", price: "$26.990", description: "miNest impermeable", image: "imagenes/Mudador Portátil Vichy.png", store: "miNest", url: "https://minest.cl/products/mudador-portatil-vichy-gris" },
       { id: 29, name: "Saco Dormir Verano", price: "$36.990", description: "Lou Bloom TOG 0.5", image: "imagenes/Saco Dormir Verano.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/saco-de-dormir-verano-vert-tog-0-5-algodon-organico-copia" },
-      { id: 30, name: "Organizador Cuna", price: "$22.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Organizador Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/organizador-de-cuna-muselina-verde-eucalipto-algodon-organico" },
-      { id: 31, name: "Protector Cuna", price: "$46.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Protector Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/protector-de-cuna-muselina-verde-eucalipto-liso-en-algodon-organico" },
-      { id: 32, name: "Mudador Portátil Terciopelo", price: "$21.990", description: "Lou Bloom azul marino", image: "imagenes/Mudador Portátil Terciopelo.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/mudador-portatil-eco-terciopelo-azul-marino" },
-      { id: 33, name: "Kit Babyshower 3 Baberos", price: "$23.990", description: "Lou Bloom reversibles", image: "imagenes/Kit Babyshower 3 Baberos.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/copia-de-kit-babyshower-3-baberos" },
-      { id: 34, name: "Toalla Bebé Muselina", price: "$21.990", description: "Lou Bloom con capucha", image: "imagenes/Toalla Bebé Muselina.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/toalla-bebe-muselina-verde-eucalipto-en-algodon-organico-500gsm" },
+      { id: 30, name: "Organizador Cuna", price: "$22.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Organizador Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/collections/organizador-de-cuna-1/products/organizador-de-cuna-muselina-verde-eucalipto-algodon-organico" },
+      { id: 31, name: "Protector Cuna", price: "$46.990", description: "Lou Bloom verde eucalipto", image: "imagenes/Protector Cuna.png", store: "Lou Bloom", url: "https://www.loubloom.com/collections/protectores-de-cuna/products/protector-de-cuna-muselina-verde-eucalipto-liso-en-algodon-organico" },
+      { id: 32, name: "Mudador Portátil Terciopelo", price: "$21.990", description: "Lou Bloom azul marino", image: "imagenes/Mudador Portátil Terciopelo.png", store: "Lou Bloom", url: "https://www.loubloom.com/collections/mudador-portatil/products/mudador-portatil-eco-terciopelo-azul-marino" },
+      { id: 33, name: "Kit Babyshower 3 Baberos", price: "$23.990", description: "Lou Bloom reversibles", image: "imagenes/Kit Babyshower 3 Baberos.png", store: "Lou Bloom", url: "https://www.loubloom.com/collections/kits/products/copia-de-kit-babyshower-3-baberos" },
+      { id: 34, name: "Toalla Bebé Muselina", price: "$21.990", description: "Lou Bloom con capucha", image: "imagenes/Toalla Bebé Muselina.png", store: "Lou Bloom", url: "https://www.loubloom.com/collections/regalos-personalizables/products/toalla-bebe-muselina-verde-eucalipto-en-algodon-organico-500gsm" },
     ];
 
-    let reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
+    let reservations = {};
     let currentProductId = null;
-
-    // Google Sheets sincronización
-    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec';
 
     function loadFromSheets() {
       fetch(SHEETS_URL)
@@ -305,79 +243,24 @@
           reservations = data;
           localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
           renderProducts();
-          renderReservations();
+          updateSummary();
         })
         .catch(() => {
           reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
+          renderProducts();
+          updateSummary();
         });
     }
 
-    // Cargar al inicio y cada 3 segundos
     loadFromSheets();
     setInterval(loadFromSheets, 3000);
 
-    // Sincronización en tiempo real
-    window.addEventListener('storage', (e) => {
-      if (e.key === 'babyShowerReservations') {
-        reservations = JSON.parse(e.newValue) || {};
-    
-    function downloadReservations() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      
-      if (Object.keys(reservations).length === 0) {
-        alert('No hay reservas aún');
-        return;
-      }
-
-      // Crear CSV
-      let csv = 'Producto,Precio,Nombre,Email,Teléfono,Fecha\n';
-      
-      Object.entries(reservations).forEach(([id, res]) => {
-        const nombre = (res.name || '').replace(/"/g, '""');
-        const email = (res.email || '').replace(/"/g, '""');
-        const telefono = (res.phone || '').replace(/"/g, '""');
-        const producto = (res.productName || '').replace(/"/g, '""');
-        const precio = (res.productPrice || '').replace(/"/g, '""');
-        const fecha = res.date || '';
-        
-        csv += `"${producto}","${precio}","${nombre}","${email}","${telefono}","${fecha}"\n`;
-      });
-
-      // Descargar
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'reservas-baby-brunch-clemente.csv');
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    function copyReservationsJSON() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      const json = JSON.stringify(reservations, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        alert('✅ Datos copiados al portapapeles');
-      }).catch(() => {
-        console.log(json);
-        alert('Datos mostrados en consola (F12)');
-      });
-    }
-
-    renderProducts();
-        updateSummary();
-      }
-    });
-
-    function switchTab(tabName) {
+    function switchTab(tabName, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
       document.getElementById(tabName).classList.add('active');
-      event.target.classList.add('active');
+      btn.classList.add('active');
       if (tabName === 'summary') updateSummary();
-      if (tabName === 'reservations') updateReservationsList();
     }
 
     function renderProducts(filtered = products) {
@@ -393,7 +276,7 @@
         const reserved = reservations[product.id];
         return `
           <div class="product-card ${reserved ? 'reserved' : ''}" onclick="${reserved ? '' : `openModal(${product.id})`}">
-            <img src="${product.image}" class="product-image" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x130?text=Producto'">
+            <img src="${product.image}" class="product-image" alt="${product.name}" loading="lazy" onerror="this.style.background='#f0f0f0'">
             <div class="product-info">
               <div class="product-store">${product.store}</div>
               ${product.tag ? `<div class="product-tag">${product.tag}</div>` : ''}
@@ -433,71 +316,22 @@
         return;
       }
 
-      // Verificar que no esté ya reservado
       if (reservations[currentProductId]) {
         alert('Este producto ya fue reservado');
         closeModal();
-    
-    function downloadReservations() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      
-      if (Object.keys(reservations).length === 0) {
-        alert('No hay reservas aún');
-        return;
-      }
-
-      // Crear CSV
-      let csv = 'Producto,Precio,Nombre,Email,Teléfono,Fecha\n';
-      
-      Object.entries(reservations).forEach(([id, res]) => {
-        const nombre = (res.name || '').replace(/"/g, '""');
-        const email = (res.email || '').replace(/"/g, '""');
-        const telefono = (res.phone || '').replace(/"/g, '""');
-        const producto = (res.productName || '').replace(/"/g, '""');
-        const precio = (res.productPrice || '').replace(/"/g, '""');
-        const fecha = res.date || '';
-        
-        csv += `"${producto}","${precio}","${nombre}","${email}","${telefono}","${fecha}"\n`;
-      });
-
-      // Descargar
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'reservas-baby-brunch-clemente.csv');
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    function copyReservationsJSON() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      const json = JSON.stringify(reservations, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        alert('✅ Datos copiados al portapapeles');
-      }).catch(() => {
-        console.log(json);
-        alert('Datos mostrados en consola (F12)');
-      });
-    }
-
-    renderProducts();
         return;
       }
 
       const product = products.find(p => p.id === currentProductId);
       reservations[currentProductId] = {
         name, email, phone,
-        date: new Date().toLocaleDateString('es-ES'),
+        date: new Date().toLocaleDateString('es-CL'),
         productName: product.name,
         productPrice: product.price
       };
-      
+
       localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
 
-      // Enviar a Google Sheets
       const formData = new FormData();
       formData.append('id', currentProductId);
       formData.append('productName', product.name);
@@ -508,56 +342,9 @@
       fetch(SHEETS_URL, { method: 'POST', mode: 'no-cors', body: formData });
 
       renderProducts();
-      renderReservations();
+      updateSummary();
       closeModal();
 
-    function downloadReservations() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      
-      if (Object.keys(reservations).length === 0) {
-        alert('No hay reservas aún');
-        return;
-      }
-
-      // Crear CSV
-      let csv = 'Producto,Precio,Nombre,Email,Teléfono,Fecha\n';
-      
-      Object.entries(reservations).forEach(([id, res]) => {
-        const nombre = (res.name || '').replace(/"/g, '""');
-        const email = (res.email || '').replace(/"/g, '""');
-        const telefono = (res.phone || '').replace(/"/g, '""');
-        const producto = (res.productName || '').replace(/"/g, '""');
-        const precio = (res.productPrice || '').replace(/"/g, '""');
-        const fecha = res.date || '';
-        
-        csv += `"${producto}","${precio}","${nombre}","${email}","${telefono}","${fecha}"\n`;
-      });
-
-      // Descargar
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'reservas-baby-brunch-clemente.csv');
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    function copyReservationsJSON() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      const json = JSON.stringify(reservations, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        alert('✅ Datos copiados al portapapeles');
-      }).catch(() => {
-        console.log(json);
-        alert('Datos mostrados en consola (F12)');
-      });
-    }
-
-    renderProducts();
-      
       const successMsg = document.getElementById('successMsg');
       successMsg.classList.add('show');
       setTimeout(() => successMsg.classList.remove('show'), 3000);
@@ -568,99 +355,25 @@
       const reserved = Object.keys(reservations).length;
       const available = total - reserved;
       const percentage = Math.round((reserved / total) * 100);
-
       document.getElementById('totalProducts').textContent = total;
       document.getElementById('reservedCount').textContent = reserved;
       document.getElementById('availableCount').textContent = available;
       document.getElementById('percentageReserved').textContent = percentage + '%';
     }
 
-    function updateReservationsList() {
-      const list = document.getElementById('reservationsList');
-      const empty = document.getElementById('emptyReservations');
-      
-      const reservationItems = Object.entries(reservations).map(([id, reservation]) => `
-        <div class="reservation-item">
-          <div class="reservation-info">
-            <h3>${reservation.productName}</h3>
-            <p>${reservation.name} • ${reservation.date}</p>
-          </div>
-          <div class="reservation-price">${reservation.productPrice}</div>
-        </div>
-      `).join('');
-
-      if (reservationItems) {
-        list.innerHTML = reservationItems;
-        empty.style.display = 'none';
-      } else {
-        list.innerHTML = '';
-        empty.style.display = 'block';
-      }
-    }
-
     document.getElementById('searchInput').addEventListener('input', (e) => {
       const search = e.target.value.toLowerCase();
-      const filtered = products.filter(p => 
-        p.name.toLowerCase().includes(search) || 
+      const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(search) ||
         p.description.toLowerCase().includes(search)
       );
       renderProducts(filtered);
     });
 
     document.getElementById('modalOverlay').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('modalOverlay')) {
-        closeModal();
-      }
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
     });
 
-
-    function downloadReservations() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      
-      if (Object.keys(reservations).length === 0) {
-        alert('No hay reservas aún');
-        return;
-      }
-
-      // Crear CSV
-      let csv = 'Producto,Precio,Nombre,Email,Teléfono,Fecha\n';
-      
-      Object.entries(reservations).forEach(([id, res]) => {
-        const nombre = (res.name || '').replace(/"/g, '""');
-        const email = (res.email || '').replace(/"/g, '""');
-        const telefono = (res.phone || '').replace(/"/g, '""');
-        const producto = (res.productName || '').replace(/"/g, '""');
-        const precio = (res.productPrice || '').replace(/"/g, '""');
-        const fecha = res.date || '';
-        
-        csv += `"${producto}","${precio}","${nombre}","${email}","${telefono}","${fecha}"\n`;
-      });
-
-      // Descargar
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'reservas-baby-brunch-clemente.csv');
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    function copyReservationsJSON() {
-      const reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
-      const json = JSON.stringify(reservations, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        alert('✅ Datos copiados al portapapeles');
-      }).catch(() => {
-        console.log(json);
-        alert('Datos mostrados en consola (F12)');
-      });
-    }
-
-    renderProducts();
-    updateSummary();
   </script>
 </body>
 </html>
