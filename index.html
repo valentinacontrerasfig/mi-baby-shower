@@ -331,6 +331,31 @@
       });
     }
 
+    
+    // Guardar en Google Sheets
+    function saveToGoogleSheets(productId, name, email, phone, productName) {
+      const data = {
+        id: productId,
+        name: name,
+        email: email,
+        phone: phone,
+        productName: productName,
+        date: new Date().toLocaleDateString('es-CL')
+      };
+      
+      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('✅ Guardado en Google Sheets:', result);
+      })
+      .catch(error => {
+        console.error('Error Google Sheets:', error);
+      });
+    }
+
     renderProducts();
         updateSummary();
       }
@@ -448,6 +473,31 @@
       });
     }
 
+    
+    // Guardar en Google Sheets
+    function saveToGoogleSheets(productId, name, email, phone, productName) {
+      const data = {
+        id: productId,
+        name: name,
+        email: email,
+        phone: phone,
+        productName: productName,
+        date: new Date().toLocaleDateString('es-CL')
+      };
+      
+      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('✅ Guardado en Google Sheets:', result);
+      })
+      .catch(error => {
+        console.error('Error Google Sheets:', error);
+      });
+    }
+
     renderProducts();
         return;
       }
@@ -505,6 +555,31 @@
       }).catch(() => {
         console.log(json);
         alert('Datos mostrados en consola (F12)');
+      });
+    }
+
+    
+    // Guardar en Google Sheets
+    function saveToGoogleSheets(productId, name, email, phone, productName) {
+      const data = {
+        id: productId,
+        name: name,
+        email: email,
+        phone: phone,
+        productName: productName,
+        date: new Date().toLocaleDateString('es-CL')
+      };
+      
+      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('✅ Guardado en Google Sheets:', result);
+      })
+      .catch(error => {
+        console.error('Error Google Sheets:', error);
       });
     }
 
@@ -608,6 +683,31 @@
       }).catch(() => {
         console.log(json);
         alert('Datos mostrados en consola (F12)');
+      });
+    }
+
+    
+    // Guardar en Google Sheets
+    function saveToGoogleSheets(productId, name, email, phone, productName) {
+      const data = {
+        id: productId,
+        name: name,
+        email: email,
+        phone: phone,
+        productName: productName,
+        date: new Date().toLocaleDateString('es-CL')
+      };
+      
+      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('✅ Guardado en Google Sheets:', result);
+      })
+      .catch(error => {
+        console.error('Error Google Sheets:', error);
       });
     }
 
