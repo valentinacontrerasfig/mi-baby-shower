@@ -282,14 +282,18 @@
     
     // Cargar reservas desde Google Sheets cada 3 segundos
     function loadReservationsFromSheets() {
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec')
-        .then(response => response.json())
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec')
+        .then(r => r.json())
         .then(data => {
-          reservations = data;
-          localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
-          renderProducts();
-          renderReservations();
+          if (Object.keys(data).length > 0) {
+            reservations = data;
+            localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
+            renderProducts();
+            renderReservations();
+          }
         })
+        .catch(() => {});
+    })
         .catch(error => console.log('Cargando reservas...'));
     }
     
@@ -307,7 +311,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -387,7 +391,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -529,7 +533,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -614,7 +618,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -742,7 +746,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzhtcDbWYiiz7ppOeGSjzv5fejgM_sPTTUtBGAy8gu0mA9BFbd-Xtoa6O-mkQ0eL3vcBg/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
