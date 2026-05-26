@@ -278,6 +278,50 @@
       { id: 34, name: "Toalla Bebé Muselina", price: "$21.990", description: "Lou Bloom con capucha", image: "imagenes/Toalla Bebé Muselina.png", store: "Lou Bloom", url: "https://www.loubloom.com/products/toalla-bebe-muselina-verde-eucalipto-en-algodon-organico-500gsm" },
     ];
 
+    // SINCRONIZAR CON GOOGLE SHEETS EN TIEMPO REAL
+    
+    // Cargar reservas desde Google Sheets cada 3 segundos
+    function loadReservationsFromSheets() {
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec')
+        .then(response => response.json())
+        .then(data => {
+          reservations = data;
+          localStorage.setItem('babyShowerReservations', JSON.stringify(reservations));
+          renderProducts();
+          renderReservations();
+        })
+        .catch(error => console.log('Cargando reservas...'));
+    }
+    
+    // Sincronizar cada 3 segundos
+    setInterval(loadReservationsFromSheets, 3000);
+    
+    // Guardar en Google Sheets cuando se reserva
+    function saveToGoogleSheets(productId, name, email, phone, productName) {
+      const data = {
+        id: productId,
+        name: name,
+        email: email,
+        phone: phone,
+        productName: productName,
+        date: new Date().toLocaleDateString('es-CL')
+      };
+      
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        // Recargar reservas inmediatamente
+        loadReservationsFromSheets();
+      })
+      .catch(error => console.error('Error:', error));
+    }
+    
+    // Cargar al inicio
+    loadReservationsFromSheets();
+
+
     let reservations = JSON.parse(localStorage.getItem('babyShowerReservations')) || {};
     let currentProductId = null;
 
@@ -343,7 +387,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -485,7 +529,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -570,7 +614,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
@@ -698,7 +742,7 @@
         date: new Date().toLocaleDateString('es-CL')
       };
       
-      fetch('https://script.google.com/macros/s/AKfycbxcmpz5P1KdgNdMbyxyoOw9k1-OHXGt3L8F35l_RdorL3cpiEr1moocpx7tH7-Ail8dGw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwJ5tXUk68kut7M471IWWvHqPHfj0wKClrZkgyVIx1jG3DXWnz03FLHkgIr0pOqZMkWxQ/exec', {
         method: 'POST',
         body: JSON.stringify(data)
       })
