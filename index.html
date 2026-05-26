@@ -284,7 +284,7 @@
         const reserved = reservations[product.id];
         return `
           <div class="product-card ${reserved ? 'reserved' : ''}" onclick="${reserved ? '' : `openModal(${product.id})`}" style="${reserved ? 'cursor:default;' : ''}"
-            <img src="${product.image}" class="product-image" alt="${product.name}" loading="lazy" onerror="this.style.background='#f0f0f0'">
+            <img src="${product.image}" class="product-image" alt="${product.name}" loading="eager" onerror="this.style.background='#f0f0f0'">
             <div class="product-info">
               <div class="product-store">${product.store}</div>
               ${product.tag ? `<div class="product-tag">${product.tag}</div>` : ''}
