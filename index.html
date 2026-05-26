@@ -283,7 +283,7 @@
               <div class="product-name">${product.name}</div>
               <div class="product-description">${product.description}</div>
               <div class="product-price">${product.price}</div>
-              ${reserved ? `<div class="reserved-badge">Reservado</div>` : `<button class="reserve-btn" onclick="event.stopPropagation(); openModal(${product.id})">Reservar</button>`}
+              ${reserved ? `<div class="reserved-badge">Reservado</div><a href="${product.url}" target="_blank" onclick="event.stopPropagation()" style="display:block; margin-top:8px; text-align:center; font-size:10px; color:#2d5a4a; text-decoration:none; border:1px solid #2d5a4a; padding:6px; border-radius:4px;">Ver producto →</a>` : `<button class="reserve-btn" onclick="event.stopPropagation(); openModal(${product.id})">Reservar</button>`}
             </div>
           </div>
         `;
